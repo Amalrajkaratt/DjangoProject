@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <img  src="{{user.Photo.url}}" height="220px" width="220px"  alt="" align="right" style="border-radius: 50px;"><br>
+    {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+        {{user.Name}}
+        <br>{{user.Age}}
+        <br>{{user.Place}}
+        <br>{{user.Email}}
+</body>
+{% endblock %}

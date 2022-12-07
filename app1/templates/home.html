@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+     <img  src="{{user.Photo.url}}" height="220px" width="220px"  alt="" align="right" style="border-radius: 50px;"><br>
+     <h3>
+        {% for msg in messages %}
+            {{msg}}
+            {% endfor %}
+            {{user.Name}}
+            <br>{{user.Age}}
+            <br>{{user.Place}}
+            <br>{{user.Email}}
+        <br><br>
+        <a href="{% url 'app1:update' user.id %}">Update</a>
+        <a href="{% url 'app1:changepassword' user.id %}">Change password</a>
+        <a href="{% url 'app1:logout' %}">LogOut</a>  
+        </h3>
+</body>
+{% endblock %}
